@@ -1,0 +1,23 @@
+<html>
+ <head>
+  <script type="application/javascript">
+    function draw() {
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+        img.src = 'https://mdn.mozillademos.org/files/222/Canvas_createpattern.png';
+        img.onload = function() {
+          // 创建图案
+          var ptrn = ctx.createPattern(img, 'repeat');
+          ctx.fillStyle = ptrn;
+          ctx.fillRect(0, 0, 150, 150);
+        }
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="150" height="150"></canvas>
+ </body>
+</html>
